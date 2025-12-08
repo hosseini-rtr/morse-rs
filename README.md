@@ -3,6 +3,7 @@
 A minimal and fast command-line tool for learning and translating Morse code, written in Rust.
 
 This project aims to provide:
+
 - A simple CLI interface for encoding text to Morse.
 - Decoding Morse back to text.
 - Optional practice mode for learning and memorizing Morse patterns.
@@ -11,9 +12,10 @@ This project aims to provide:
 
 ## Features
 
-- Encode plain text to Morse code.
-- Decode Morse code to plain text.
-- Practice mode (planned).
+- Encode: plain text to Morse code.
+- Decode: Morse code to plain text.+
+- Transmit: Pretend you're operating a telegraph.
+- Learning: Practice mode (planned).
 - Fast and safe Rust implementation.
 
 ---
@@ -26,11 +28,11 @@ This project aims to provide:
 git clone https://github.com/hosseini-rtr/morse-rs.git
 cd morse-rs
 cargo build --release
-````
+```
 
 The compiled binary will be in:
 
-``` bash
+```bash
 target/release/morse-rs
 ```
 
@@ -39,6 +41,12 @@ Add it to your PATH if needed.
 ---
 
 ## Usage
+
+### Transmit
+
+```bash
+morse-rs transmit
+```
 
 ### Encode text
 
@@ -74,21 +82,19 @@ morse-rs practice
 
 ## Roadmap
 
-* [ ] Complete encoding logic
-* [ ] Complete decoding logic
-* [ ] Complete read file logic
-* [ ] Add interactive practice mode
-* [ ] Add configuration options (speed, spacing)
-* [ ] Publish to crates.io
+- [ ] Complete encoding logic
+- [ ] Complete decoding logic
+- [ ] Complete read file logic
+- [ ] Add interactive practice mode
+- [ ] Add configuration options (speed, spacing)
+- [ ] Publish to crates.io
 
 ---
 
 ## Contributing
 
-Pull requests are welcome.
----
+## Pull requests are welcome.
 
 ## License
 
 MIT
-
