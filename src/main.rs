@@ -1,12 +1,40 @@
-use ferris_says::say;
-use std::io::{BufWriter, stdout};
+use clap::{Parser, Subcommand};
+use std::process::Command;
+
+use morse_rs::{decode, encode};
+#[derive(Parser)]
+#[command(version, about)]
+struct Cli {
+    #[command(subcommand)]
+    command: Commands,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    Encode { value: String },
+    Decode { value: String },
+    Learn,
+}
 
 fn main() {
-    let stdout = stdout();
-    let message = String::from("Welcome to Morse_rs");
-    let width = message.chars().count();
+    Command::new("clear")
+        .status()
+        .expect("error on clear terminal");
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(&message, width, &mut writer).unwrap();
-    // println!("Hello, world!");
+    let cli = Cli::parse();
+
+    match cli.command {
+        Commands::Encode { value } => {
+            println!(
+                "Text: {} to morse is:  ..- --. ---. --.-",
+                encode::encode(value)
+            )
+        }
+        Commands::Decode { value } => {
+            println!("{}", decode::decode(value))
+        }
+        Commands::Learn => {
+            println!("Learning progress")
+        }
+    }
 }

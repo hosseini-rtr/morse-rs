@@ -1,7 +1,9 @@
 [package]
-name = "morse"
+name = "morse_rs"
 version = "0.1.0"
 edition = "2024"
+description = "Morse encoder/decoder"
 
 [dependencies]
+clap = { version = "4.5.53", features = ["derive", "cargo"] }
 ferris-says = "0.3.2"
