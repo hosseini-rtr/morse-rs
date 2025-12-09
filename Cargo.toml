@@ -7,3 +7,4 @@ description = "Morse encoder/decoder"
 [dependencies]
 clap = { version = "4.5.53", features = ["derive", "cargo"] }
 ferris-says = "0.3.2"
+lazy_static = "1.4"

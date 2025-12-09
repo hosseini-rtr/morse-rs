@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
 use std::process::Command;
 
+
 use morse_rs::{decode, encode};
 #[derive(Parser)]
 #[command(version, about)]
