@@ -26,10 +26,8 @@ fn main() {
 
     match cli.command {
         Commands::Encode { value } => {
-            println!(
-                "Text: {} to morse is:  ..- --. ---. --.-",
-                encode::encode(value)
-            )
+            let morse = encode::encode(&value).join(" ");
+            println!("Text: {}  Morse: {}", value, morse);
         }
         Commands::Decode { value } => {
             println!("{}", decode::decode(value))
